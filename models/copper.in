@@ -1,0 +1,22 @@
+units           metal
+boundary        p p p
+atom_style      atomic
+
+neighbor        2.0 bin
+neigh_modify    every 50 delay 0 check no
+
+read_data	../copper.lmp
+mass            1 63.546
+
+replicate       4 4 4 
+pair_style      deepmd frozen_model.pb
+pair_coeff * *
+
+velocity        all create 330.0 23456789
+
+fix             1 all nve
+timestep        0.001
+thermo_style    custom step pe ke etotal temp press vol
+thermo          20
+
+run             499

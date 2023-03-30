@@ -1,0 +1,72 @@
+variable        NSTEPS          equal 100
+variable        THERMO_FREQ     equal 10
+variable        DUMP_FREQ       equal 500
+#variable        MC_FREQ         equal 30
+variable        TEMP            equal 700.000000
+#vaeiable        TEMP_MC         equal 50
+variable        PRES            equal 1.000000
+variable        TAU_T           equal 0.200000
+variable        TAU_P           equal 2.000000
+
+
+units           metal
+boundary        p p p
+atom_style      atomic
+
+neighbor        1.0 bin
+
+box          tilt large
+read_data ../hea.lmp
+replicate       2 2 2
+
+group Ta type 1
+group Nb type 2
+group W  type 3
+group Mo type 4
+group other subtract all Ta Nb W Mo
+set group other type/subset 1 27 4345467
+
+group Ta type 1
+group Nb type 2
+group W  type 3
+group Mo type 4
+group other subtract all Ta Nb W Mo
+set group other type/subset 2 27 4345467
+
+group Ta type 1
+group Nb type 2
+group W  type 3
+group Mo type 4
+group other subtract all Ta Nb W Mo
+set group other type/subset 3 27 4345467
+
+group Ta type 1
+group Nb type 2
+group W  type 3
+group Mo type 4
+group other subtract all Ta Nb W Mo
+set group other type/subset 4 27 4345467
+
+change_box   all triclinic
+mass            1 180.950000
+mass            2 92.910000
+mass            3 183.840000
+mass            4 95.940000
+mass            5 50.940000
+mass            6 26.980000
+pair_style      deepmd frozen_model.pb 
+pair_coeff      * * 
+
+thermo_style    custom step temp pe ke etotal press vol lx ly lz xy xz yz
+thermo          ${THERMO_FREQ}
+#dump            1 all custom ${DUMP_FREQ} traj/*.lammpstrj id type x y z fx fy fz
+dump            dpgen_dump all custom ${DUMP_FREQ} *.lammpstrj id type x y z
+
+velocity        all create ${TEMP} 709383
+
+fix             1 all npt temp ${TEMP} ${TEMP} ${TAU_T} iso 1.0 1.0 ${TAU_P}
+
+
+timestep        0.002000
+run             ${NSTEPS} upto
+
