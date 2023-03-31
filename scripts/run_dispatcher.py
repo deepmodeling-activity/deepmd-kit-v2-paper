@@ -70,7 +70,7 @@ resources = Resources(
 )
 
 tasks = []
-for config in system_configs[3:5]:
+for config in system_configs:
     if config["lmp_file"] is not None:
         if config["compress"]:
             command = "python ../../scripts/benchmark_remote.py . --lmp_file ../{} --compress".format(config["lmp_file"])
