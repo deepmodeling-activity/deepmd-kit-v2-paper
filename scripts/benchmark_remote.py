@@ -56,6 +56,7 @@ def read_train_speed(f_out: str):
         for line in f:
             if line.startswith('DEEPMD INFO    average training time'):
                 return float(line.split()[5])
+    raise RuntimeError('Cannot find the training speed in the output file.')
 
 def read_md_speed(f_out: str):
     with open(f_out, 'r') as f:
@@ -63,6 +64,7 @@ def read_md_speed(f_out: str):
             if line.startswith('Loop time of'):
                 # Loop time of 0.127946 on 1 procs for 20 steps with 192 atoms
                 return float(line.split()[3]) / float(line.split()[8]) / float(line.split()[11])
+    raise RuntimeError('Cannot find the MD speed in the output file.')
 
 
 def benchmark(directory: str, lmp_file: str, compress: bool, input_file: str = 'input.json', frozen_model: str = 'frozen_model.pb'):
@@ -84,7 +86,7 @@ def benchmark(directory: str, lmp_file: str, compress: bool, input_file: str = '
     with chdir(directory=directory):
         # benchmark training
         # first, reset the training steps
-        change_training_steps(input=input_file, output='benchmark.json', training_steps=200)
+        change_training_steps(input=input_file, output='benchmark.json', training_steps=10000)
         run_dp_train(input='benchmark.json', init_frz_model=frozen_model, f_out='bench_train.log')
         train_speed = read_train_speed(f_out='bench_train.log')
         # benchmark MD
