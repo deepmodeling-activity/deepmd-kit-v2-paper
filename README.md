@@ -1,5 +1,20 @@
 # Data for DeePMD-kit v2 paper
 
+This is the repository for supporting data in the following paper:
+
+Jinzhe Zeng, Duo Zhang, Denghui Lu, Pinghui Mo, Zeyu Li, Yixiao Chen, Mari´an Rynik, Li’ang Huang, Ziyao Li, Shaochen Shi, Yingze Wang,
+Haotian Ye, Ping Tuo, Jiabin Yang, Ye Ding, Yifan Li, Davide Tisi, Qiyu
+Zeng, Han Bao, Yu Xia, Jiameng Huang, Koki Muraoka, Yibo Wang,
+Junhan Chang, Fengbo Yuan, Sigbjørn Løland Bore, Chun Cai, Yinnian Lin,
+Bo Wang, Jiayan Xu, Jia-Xin Zhu, Chenxing Luo, Yuzhi Zhang, Rhys E. A.
+Goodall, Wenshuo Liang, Anurag Kumar Singh, Sikai Yao, Jingchao Zhang,
+Renata Wentzcovitch, Jiequn Han, Jie Liu, Weile Jia, Darrin M. York,
+Weinan E, Roberto Car, Linfeng Zhang, and Han Wang,
+DeePMD-kit v2: A software package for Deep Potential models,
+*in preparation*.
+
+Please give the proper credits if you reuse these data.
+
 ## Data sets and LAMMPS data
 
 | Name  | Link           | LAMMPS data |
