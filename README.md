@@ -11,7 +11,7 @@ Goodall, Wenshuo Liang, Anurag Kumar Singh, Sikai Yao, Jingchao Zhang,
 Renata Wentzcovitch, Jiequn Han, Jie Liu, Weile Jia, Darrin M. York,
 Weinan E, Roberto Car, Linfeng Zhang, and Han Wang,
 DeePMD-kit v2: A software package for Deep Potential models,
-*in preparation*.
+[arXiv:2304.09409](https://arxiv.org/abs/2304.09409), 2023.
 
 Please give the proper credits if you reuse these data.
 
