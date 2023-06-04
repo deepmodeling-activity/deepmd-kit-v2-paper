@@ -63,8 +63,6 @@ resources = Resources(
 
 tasks = []
 for config in system_configs:
-    if config["name"] not in ("37", "39"):
-        continue
     if config["lmp_file"] is not None:
         if config["compress"]:
             command = "python ../../scripts/natoms_remote.py . ../{} --compress".format(config["lmp_file"])
