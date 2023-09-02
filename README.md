@@ -10,8 +10,8 @@ Bo Wang, Jiayan Xu, Jia-Xin Zhu, Chenxing Luo, Yuzhi Zhang, Rhys E. A.
 Goodall, Wenshuo Liang, Anurag Kumar Singh, Sikai Yao, Jingchao Zhang,
 Renata Wentzcovitch, Jiequn Han, Jie Liu, Weile Jia, Darrin M. York,
 Weinan E, Roberto Car, Linfeng Zhang, and Han Wang,
-DeePMD-kit v2: A software package for Deep Potential models,
-[arXiv:2304.09409](https://arxiv.org/abs/2304.09409), 2023.
+DeePMD-kit v2: A software package for deep potential models,
+[J. Chem. Phys., 2023, 159, 54801](https://doi.org/10.1063/5.0155600).
 
 Please give the proper credits if you reuse these data.
 
